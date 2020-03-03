@@ -3,60 +3,100 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
-	<!--<link rel="stylesheet" href="styles.css">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<style>
-		#character-target-div { border: 1px solid black; width: 300px; height: 300px; }
+		#character-target-div { border: 1px solid black; width: 350px; height: 350px; }
 	</style>
 	<script text="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/hanzi-writer@2.2/dist/hanzi-writer.min.js"></script>
 	<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 	<script>
 	
-	var words = ["我","码"];
+	// https://notevibes.com/
+	
+	var words = [
+		"我",
+		"马",
+		"杨",
+		"永",
+		"仁",
+		"义",
+		"爸",
+		"妈",
+		"侠",
+		"口",
+		"哥",
+		"妹",
+		"姐",
+		"山",
+		"年",
+		"弟",
+		"日",
+		"月",
+		"水",
+		"级",
+		"超",
+		"飞"
+		
+	];
 	var n = 0;
-	var writer;
 	
 	$(document).ready(function() 
-	{
-		$('.animate').click(function() 
-		{	
-			writer.animateCharacter();	
-        });
-		
-		$('.loop').click(function() 
-		{	
-			writer.loopCharacterAnimation();
-        });
+	{		
+		$(".check").prop('disabled', true);
 		
 		$('.check').click(function() 
 		{	
-			nextWord();		
+			$(".check").prop('disabled', true);
+			nextQuestion();		
         });
 		
 		$('.play').click(function() {
 			$(".audio")[0].play();
         });
 		
-		nextWord();
+		nextQuestion();
 	});
 
-	function nextWord()
+	function nextQuestion()
 	{
-		n++;
-		if (n >= words.length)
-			n = 0;
-	
 		$("#character-target-div").empty();
 		
-		writer = HanziWriter.create('character-target-div', words[n], 
+		var writer = HanziWriter.create('character-target-div', words[n], 
 		{
-			width: 300,
-			height: 300,
-			showCharacter: true,
+			width: 350,
+			height: 350,
+			showCharacter: false,
 			showOutline: true,
-			padding: 5
+			showHintAfterMisses: 1,
+			padding: 0
 		});
-		writer.animateCharacter();		
+		
+		writer.quiz({
+			onMistake: function(strokeData) {
+			console.log('Oh no! you made a mistake on stroke ' + strokeData.strokeNum);
+			console.log("You've made " + strokeData.mistakesOnStroke + " mistakes on this stroke so far");
+			console.log("You've made " + strokeData.totalMistakes + " total mistakes on this quiz");
+			console.log("There are " + strokeData.strokesRemaining + " strokes remaining in this character");
+			},
+			onCorrectStroke: function(strokeData) {
+			console.log('Yes!!! You got stroke ' + strokeData.strokeNum + ' correct!');
+			console.log('You made ' + strokeData.mistakesOnStroke + ' mistakes on this stroke');
+			console.log("You've made " + strokeData.totalMistakes + ' total mistakes on this quiz');
+			console.log('There are ' + strokeData.strokesRemaining + ' strokes remaining in this character');
+			},
+			onComplete: function(summaryData) {
+			console.log('You did it! You finished drawing ' + summaryData.character);
+			console.log('You made ' + summaryData.totalMistakes + ' total mistakes on this quiz');
+			n++;
+			if (n >= words.length)
+				n = 0;
+			$(".check").prop('disabled', false);
+			}
+		});
+		
+		console.log(words[n] + ".mp3")
 		$(".audio").attr('src',  words[n] + ".mp3");
 	}
 	
@@ -64,15 +104,25 @@
 </head>
 
 <body>
-<audio class="audio" autoplay></audio>
-<button class="play">Play Audio</button>
-<p>
-<div id="character-target-div"></div>
-</p>
+<div class="container">
+		<div class="row py-5">
+			<div class="col">
+				<a href="https://chinesetingxie.github.io">Back</a>
+			</div>
+		</div>
+		<div class="row text-nowrap">
+			<div class="col">
+				<audio class="audio" autoplay></audio>
+				<button class="play btn btn-info">Play Audio</button>
+				<p>
+					<div id="character-target-div"></div>
+				</p>
 
-<button class="animate">Play Once</button>
-<button class="loop">Loop</button>
-<button class="check">Next</button>
+				<button class="check btn btn-success">Next</button>
+			</div>
+		</div>
+</div>
+
       
 </body>
 </html>
