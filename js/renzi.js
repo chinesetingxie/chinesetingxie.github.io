@@ -37,6 +37,7 @@ $(document).ready(function()
 	
 	$('.restart').click(function() 
 	{
+		n = 0;
 		$("#gif").hide();
 		$(".restart").hide();
 		$('.choice').prop('disabled', false);
