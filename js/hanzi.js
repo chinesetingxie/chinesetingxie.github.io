@@ -1,8 +1,9 @@
 var n = 0;
+var i;
 var learn = false;
 var nMistakes = 0;
 var lesson;
-var words;
+var words = [];
 
 $(document).ready(function() 
 {		
@@ -17,26 +18,14 @@ $(document).ready(function()
 	
 	$("#gif").hide();
 	
-	$.ajax({
-		type: "GET",
-		url: "./" + lesson + "/hanzi/hanzi.json",
-		contentType: "application/json; charset=utf-8",
-		dataType: "json",		
-		success: function(result) 
-		{
-			words = result;
-			console.log(words);
-			nextQuestion();
-		},
-
-	});
-	
-	/*$.getJSON("./" + lesson + "/hanzi/hanzi.json", function(result)
+	$.getJSON("./" + lesson + "/hanzi/hanzi.json", function(result)
 	{
-		words = result;
-		console.log(words);
+		for (i = 0; i < result.words.length; i++)
+			words.push(result.words[0]);
+		
+		shuffle(words);
 		nextQuestion();
-	});*/
+	});
 	
 	$('.check').click(function() 
 	{		
@@ -62,7 +51,7 @@ function nextQuestion()
 	
 	nMistakes = 0;
 	
-	var writer = HanziWriter.create('character-target-div', words.word[n], 
+	var writer = HanziWriter.create('character-target-div', words[n], 
 	{
 		width: 350,
 		height: 350,
@@ -114,11 +103,11 @@ function nextQuestion()
 			/*console.log('You did it! You finished drawing ' + summaryData.character);
 			console.log('You made ' + summaryData.totalMistakes + ' total mistakes on this quiz');*/
 			n++;
-			if (n >= words.word.length)
+			if (n >= words.length)
 				n = 0;
 			$(".check").show();
 		}
 	});
 	
-	$(".audio").attr('src', "./" + lesson + "/hanzi/" + words.word[n] + ".mp3");	
+	$(".audio").attr('src', "./" + lesson + "/hanzi/" + words[n] + ".mp3");	
 }
