@@ -120,18 +120,5 @@ function nextQuestion()
 		}
 	});
 	
-	//var char = utf8.decode(words.word[n]);
-	//var audio = "./" + lesson + "/hanzi/" + char + ".mp3";
-	console.log(words.word[n])
-	
-	//$(".audio").attr('src', "./" + lesson + "/hanzi/" + decodeURIComponent(words.word[n]) + ".mp3");
-
-
-	var audio = document.getElementById('audio');
-	var source = document.getElementById('mp3Source');
-	source.src = "./" + lesson + "/hanzi/" + words.word[n] + ".mp3";
-
-  audio.load(); //call this to just preload the audio without playing
- // audio.play(); //call this to play the song right away
-	
+	$(".audio").attr('src', "./" + lesson + "/hanzi/" + words.word[n] + ".mp3");	
 }
