@@ -22,7 +22,7 @@ $(document).ready(function()
 		
 		for (i = 0; i < words.length; i++)
 		{
-			var input = jQuery('<button onclick=check("' + words[i] + '"); type="button" class="' + words[i] + ' btn btn-outline-primary mr-4 p-4 choice">' + words[i] + '</button>');
+			var input = jQuery('<button onclick=check("' + words[i] + '"); type="button" class="' + words[i] + ' btn btn-outline-primary mr-4 mb-4 p-4 choice">' + words[i] + '</button>');
 			jQuery('.btn-group').append(input);
 			questionList.push(words[i]);
 		}
