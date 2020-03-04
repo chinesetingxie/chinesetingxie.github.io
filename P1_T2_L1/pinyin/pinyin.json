@@ -1,0 +1,22 @@
+{
+	"audio":
+	[
+		"sound-moe_l6_learn_gongchang.mp3",
+		"sound-moe_l6_learn_gongke.mp3",
+		"sound-moe_l6_learn_laogonggong.mp3"
+	],
+	
+	"pyanswer":
+ 	[
+		"gong_chang",
+		"gong_ke",
+		"lao_gong_gong"
+	],
+	
+	"pysound":
+	[
+		"#-##_##v##",
+		"#-##_#\\",
+		"##v_#-##_####"
+	]
+}

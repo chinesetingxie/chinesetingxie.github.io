@@ -1,15 +1,8 @@
 var i = 0;
 var j = 0;
 var n = 0;
-
 var questionBank = [];
-
-for (i = 0; i < o.audio.length; i++)
-	questionBank.push({audio: o.audio[i], pyanswer: o.pyanswer[i], pysound: o.pysound[i]});
-
-shuffle(questionBank);
-
-console.log(questionBank[n]);
+var lesson;
 
 jQuery.extend(jQuery.expr[':'], 
 {
@@ -62,55 +55,67 @@ $(document).ready(function()
 	$(".badge").hide();
 	$(".next").hide();
 	$("#gif").hide();
+	lesson = window.location.search.substr(1)
 	
-	$('.play').click(function() 
+	$.getJSON("./" + lesson + "/pinyin/pinyin.json", function(result)
 	{
-		$(".audio")[0].play();
-	});
-	
-	$('.check').click(function() 
-	{			
-		var inputList = "";
-		var soundList = "";
-		for (i = 0; i < questionBank[n].pyanswer.length; i++)
+        var o = result;
+		
+		for (i = 0; i < o.audio.length; i++)
+			questionBank.push({audio: o.audio[i], pyanswer: o.pyanswer[i], pysound: o.pysound[i]});
+
+		shuffle(questionBank);
+
+		console.log(questionBank[n]);
+				
+		$('.play').click(function() 
 		{
-			var s = $('.sound' + i).find(":selected").text();
-			if (s == "")
-				soundList += "#"
-			else
-				soundList += $('.sound' + i).find(":selected").text();
+			$(".audio")[0].play();
+		});
+		
+		$('.check').click(function() 
+		{			
+			var inputList = "";
+			var soundList = "";
+			for (i = 0; i < questionBank[n].pyanswer.length; i++)
+			{
+				var s = $('.sound' + i).find(":selected").text();
+				if (s == "")
+					soundList += "#"
+				else
+					soundList += $('.sound' + i).find(":selected").text();
+				
+				inputList += $('.input' + i).val();
+			}
+			console.log(soundList, questionBank[n].pysound);
+			console.log(inputList, questionBank[n].pyanswer);
 			
-			inputList += $('.input' + i).val();
-		}
-		console.log(soundList, questionBank[n].pysound);
-		console.log(inputList, questionBank[n].pyanswer);
+			if (soundList == questionBank[n].pysound && inputList.toLowerCase() == questionBank[n].pyanswer)
+			{
+				// correct answer
+				$(".check").hide();
+				$(".next").show();
+				$(".badge-warning").hide();	
+				//$(".badge-success").show();	
+				$("#gif").show();
+			}
+			else
+			{
+				$(".badge-warning").show();	
+			}
+		});
 		
-		if (soundList == questionBank[n].pysound && inputList.toLowerCase() == questionBank[n].pyanswer)
-		{
-			// correct answer
-			$(".check").hide();
-			$(".next").show();
-			$(".badge-warning").hide();	
-			$(".badge-success").show();	
-			$("#gif").show();
-		}
-		else
-		{
-			$(".badge-warning").show();	
-		}
-	});
-	
-	$('.next').click(function() 
-	{	
-		n++;
-		if (n >= o.pyanswer.length)
-			n = 0;
+		$('.next').click(function() 
+		{	
+			n++;
+			if (n >= o.pyanswer.length)
+				n = 0;
+			nextQuestion();			
+		});
+			
 		nextQuestion();
-		
-		
-	});
-		
-	nextQuestion();	
+    });
+
 });
 
 function nextQuestion()
@@ -155,7 +160,7 @@ function nextQuestion()
 	}
 	
 	// play audio
-	$(".audio").attr('src',  questionBank[n].audio);	
+	$(".audio").attr('src', "./" + lesson + "/pinyin/" + questionBank[n].audio);	
 	
 	$('.input0').focus();
 

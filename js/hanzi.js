@@ -1,25 +1,51 @@
 var n = 0;
 var learn = false;
 var nMistakes = 0;
+var lesson;
+var words;
 
 $(document).ready(function() 
 {		
-	if (window.location.search.substr(1) == "learn")
+	var get = window.location.search.substr(1);
+	if (get.split("-").length == 2)	
+	{
+		lesson = get.split("-")[0];
 		learn = true;
+	}
+	else
+		lesson = get;
 	
 	$("#gif").hide();
 	
+	$.ajax({
+		type: "GET",
+		url: "./" + lesson + "/hanzi/hanzi.json",
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",		
+		success: function(result) 
+		{
+			words = result;
+			console.log(words);
+			nextQuestion();
+		},
+
+	});
+	
+	/*$.getJSON("./" + lesson + "/hanzi/hanzi.json", function(result)
+	{
+		words = result;
+		console.log(words);
+		nextQuestion();
+	});*/
+	
 	$('.check').click(function() 
-	{	
-		
+	{		
 		nextQuestion();		
 	});
 	
 	$('.play').click(function() {
 		$(".audio")[0].play();
-	});
-	
-	nextQuestion();
+	});	
 });
 
 function nextQuestion()
@@ -36,7 +62,7 @@ function nextQuestion()
 	
 	nMistakes = 0;
 	
-	var writer = HanziWriter.create('character-target-div', words[n], 
+	var writer = HanziWriter.create('character-target-div', words.word[n], 
 	{
 		width: 350,
 		height: 350,
@@ -88,12 +114,24 @@ function nextQuestion()
 			/*console.log('You did it! You finished drawing ' + summaryData.character);
 			console.log('You made ' + summaryData.totalMistakes + ' total mistakes on this quiz');*/
 			n++;
-			if (n >= words.length)
+			if (n >= words.word.length)
 				n = 0;
 			$(".check").show();
 		}
 	});
 	
-	console.log(words[n] + ".mp3")
-	$(".audio").attr('src',  words[n] + ".mp3");
+	//var char = utf8.decode(words.word[n]);
+	//var audio = "./" + lesson + "/hanzi/" + char + ".mp3";
+	console.log(words.word[n])
+	
+	//$(".audio").attr('src', "./" + lesson + "/hanzi/" + decodeURIComponent(words.word[n]) + ".mp3");
+
+
+	var audio = document.getElementById('audio');
+	var source = document.getElementById('mp3Source');
+	source.src = "./" + lesson + "/hanzi/" + words.word[n] + ".mp3";
+
+  audio.load(); //call this to just preload the audio without playing
+ // audio.play(); //call this to play the song right away
+	
 }
