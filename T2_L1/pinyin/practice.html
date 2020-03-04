@@ -7,7 +7,7 @@
 	<title>T2 L1 - Pinyin</title>	
 	<style>
 	.opt-py-sounds {width: 2.5rem; text-align-last:center; }
-	.ipt-py-chars {width: 2.5rem; text-align:center; }
+	.ipt-py-chars {width: 2.5rem; text-align:center; text-transform:lowercase; }
 	.blank { width:2.5rem; border: 1px white; color: white; }
 	.blank:disabled { background: white; opacity: 0; }
 	</style>
@@ -85,6 +85,7 @@
 		case 39:
 			break;
 		default:
+			this.value = this.value.toLowerCase();
 			if (this.value.length == this.maxLength)
 				$(this).next('.ipt-py-chars').focus();
 			break;
