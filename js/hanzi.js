@@ -21,7 +21,7 @@ $(document).ready(function()
 	$.getJSON("./" + lesson + "/hanzi/hanzi.json", function(result)
 	{
 		for (i = 0; i < result.words.length; i++)
-			words.push(result.words[0]);
+			words.push(result.words[i]);
 		
 		shuffle(words);
 		nextQuestion();
