@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: chinesetingxie.github.io
+Token: 9ec79a96496ceda9607541a5c31aad3eb54fcdbb1aeebc568f79e2307ecc3388
