@@ -1,0 +1,38 @@
+{
+	"audio":
+	[
+		"sound-moe_l1_learn_yi1.mp3",
+		"sound-moe_l1_learn_wu3.mp3",
+		"sound-moe_l1_learn_wo3.mp3",
+		"sound-moe_l1_learn_ya2.mp3",
+		"sound-moe_l1_learn_yu2.mp3",
+		"蛙.mp3",
+		"sound-moe_l1_learn_yuyi.mp3",
+		"sound-moe_l1_learn_wuya.mp3"
+		
+	],
+	
+	"pyanswer":
+ 	[
+		"yi",
+		"wu",
+		"wo",
+		"ya",
+		"yu",
+		"wa"
+		"yu_yi",
+		"wu_ya"
+	],
+	
+	"pysound":
+	[
+		"#-",
+		"#v",
+		"#v",
+		"#/",
+		"#/",
+		"#-",
+		"#v_#-",
+		"#-_#-"
+	]
+}
