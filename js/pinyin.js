@@ -61,7 +61,7 @@ $(document).on('keyup', 'input', function (e)
 $(document).ready(function() 
 {
 	$(".badge").hide();
-	$(".next").hide();
+	
 	$("#gif").hide();
 	lesson = window.location.search.substr(1)
 	
