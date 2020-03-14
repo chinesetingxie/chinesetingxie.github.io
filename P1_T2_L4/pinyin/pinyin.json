@@ -1,0 +1,37 @@
+{
+	"audio":
+	[
+		"1.mp3",
+		"2.mp3",
+		"3.mp3",
+		"4.mp3",
+		"5.mp3",
+		"6.mp3",
+		"7.mp3",
+		"bonus.mp3"
+	],
+	
+	"pyanswer":
+ 	[
+		"lun_zi",
+		"shuo_hua",
+		"huang_se",
+		"hui_jia",
+		"tang_guo",
+		"guai_hai_zi",
+		"tu_shu_guan",
+		"jin_tian_shi_mei_mei_de_sheng_ri"
+	],
+	
+	"pysound":
+	[
+		"#/#_##",
+		"###-_##\\",
+		"##/##_#\\",
+		"##/_##-",
+		"#/##_##v",
+		"##-#_#/#_##",
+		"#/_##-_##v#",
+		"#-#_##-#_##\\_#\\#_###_##_##-##_#\\"
+	]
+}
