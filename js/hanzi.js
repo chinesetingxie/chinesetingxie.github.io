@@ -23,7 +23,7 @@ $(document).ready(function()
 		for (i = 0; i < result.words.length; i++)
 			words.push(result.words[i]);
 		
-		shuffle(words);
+		//shuffle(words);
 		nextQuestion();
 	});
 	
