@@ -150,7 +150,7 @@ function focusInput(t)
 function nextQuestion()
 {
 	$(".badge").hide();
-	$(".next").hide();
+	//$(".next").hide();
 	$(".check").show();
 	$("#gif").hide();
 		
