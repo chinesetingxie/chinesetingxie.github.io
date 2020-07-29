@@ -22,6 +22,9 @@ $(document).ready(function()
 	$.getJSON("./" + lesson + "/hanzi/hanzi.json", function(result)
 	{
 		
+		if (!learn)
+			$(".words").hide();
+		
 		for (i = 0; i < result.words.length; i++)
 		{
 			words.push(result.words[i]);
