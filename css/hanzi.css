@@ -1,1 +1,3 @@
 #character-target-div { border: 1px solid black; width: 350px; height: 350px; }
+.words { font-size: 1.5rem; }
+.highlight { color: red; }

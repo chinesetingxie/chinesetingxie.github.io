@@ -4,6 +4,7 @@ var learn = false;
 var nMistakes = 0;
 var lesson;
 var words = [];
+var wordString = "";
 
 $(document).ready(function() 
 {		
@@ -20,9 +21,13 @@ $(document).ready(function()
 	
 	$.getJSON("./" + lesson + "/hanzi/hanzi.json", function(result)
 	{
-		for (i = 0; i < result.words.length; i++)
-			words.push(result.words[i]);
 		
+		for (i = 0; i < result.words.length; i++)
+		{
+			words.push(result.words[i]);
+			wordString += result.words[i];
+		}
+	
 		//shuffle(words);
 		nextQuestion();
 	});
@@ -32,10 +37,45 @@ $(document).ready(function()
 		nextQuestion();		
 	});
 	
+	$('.prev').click(function() 
+	{		
+		n--;
+		if (n < 0)
+			n = words.length - 1;
+		nextQuestion();		
+	});
+	
+	$('.next').click(function() 
+	{		
+		n++;
+		if (n >= words.length)
+			n = 0;
+		nextQuestion();		
+	});
+	
 	$('.play').click(function() {
 		$(".audio")[0].play();
 	});	
 });
+
+function boldChar(n)
+{
+	var s = wordString;
+	var newS = "";
+	var i;
+	for (i = 0; i < wordString.length; i++)
+	{
+		if (i == n)
+		{
+			newS += "<strong class='highlight'>" + s.substring(i, i + 1) + "</strong>";
+		}
+		else
+		{
+			newS += s.substring(i, i + 1)
+		}
+	}
+	return newS;
+}
 
 function nextQuestion()
 {
@@ -43,6 +83,8 @@ function nextQuestion()
 	$(".check").hide();
 	
 	getGif();
+	
+	$(".words").html(boldChar(n));
 	
 	$(".badge").hide();
 	$(".check").hide();
