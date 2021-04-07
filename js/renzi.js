@@ -57,6 +57,7 @@ function check(word)
 	if (word == questionList[0])
 	{
 		// correct
+		$(".audio").attr('src', "../audio/perfect.mp3");
 		questionList.shift();
 		$("." + word).attr('disabled', 'true')
 		$("." + word).toggleClass('btn-outline-primary btn-outline-secondary');
@@ -72,6 +73,7 @@ function check(word)
 	else
 	{
 		// wrong
+		$(".audio").attr('src', "../audio/wrong.mp3");
 		$(".badge-warning").show();	
 		$(".badge-warning").text("Try again!");	
 	}

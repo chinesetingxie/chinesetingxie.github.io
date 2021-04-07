@@ -143,6 +143,7 @@ function nextQuestion()
 				{
 					$(".char-danger" + summaryData.character).text('Try harder!');
 					$(".char-danger" + summaryData.character).show();
+					$(".audio").attr('src', "../audio/wrong.mp3");
 				} 
 				else if (nMistakes >= 1)
 				{
@@ -153,6 +154,7 @@ function nextQuestion()
 				{
 					$(".char-success" + summaryData.character).text('Perfect!');
 					$(".char-success" + summaryData.character).show();
+					$(".audio").attr('src', "../audio/perfect.mp3");
 				}
 					
 				/*console.log('You did it! You finished drawing ' + summaryData.character);

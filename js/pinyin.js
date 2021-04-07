@@ -107,9 +107,11 @@ $(document).ready(function()
 				$(".badge-warning").hide();	
 				//$(".badge-success").show();	
 				$("#gif").show();
+				$(".audio").attr('src', "../audio/perfect.mp3");
 			}
 			else
 			{
+				$(".audio").attr('src', "../audio/wrong.mp3");
 				$(".badge-warning").show();	
 			}
 		});
