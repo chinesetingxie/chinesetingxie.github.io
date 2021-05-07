@@ -62,7 +62,8 @@ $(document).ready(function()
 	});
 	
 	$('.play').click(function() {
-		$(".audio")[0].play();
+		//$(".audio")[0].play();
+		$(".audio").attr('src', "./" + lesson + "/hanzi/" + words[n] + ".mp3");	
 	});	
 });
 
