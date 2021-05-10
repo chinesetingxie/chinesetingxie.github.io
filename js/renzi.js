@@ -32,7 +32,7 @@ $(document).ready(function()
 	
 	$('.play').click(function() 
 	{
-		$(".audio")[0].play();
+		$(".audio").attr('src', "./" + lesson + "/renzi/" + questionList[0] + ".mp3");
 	});	
 	
 	$('.restart').click(function() 
@@ -73,7 +73,7 @@ function check(word)
 	else
 	{
 		// wrong
-		$(".audio").attr('src', "../audio/wrong.mp3");
+		//$(".audio").attr('src', "../audio/wrong.mp3");
 		$(".badge-warning").show();	
 		$(".badge-warning").text("Try again!");	
 	}

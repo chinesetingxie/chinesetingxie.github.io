@@ -144,7 +144,7 @@ function nextQuestion()
 				{
 					$(".char-danger" + summaryData.character).text('Try harder!');
 					$(".char-danger" + summaryData.character).show();
-					$(".audio").attr('src', "../audio/wrong.mp3");
+					//$(".audio").attr('src', "../audio/wrong.mp3");
 				} 
 				else if (nMistakes >= 1)
 				{

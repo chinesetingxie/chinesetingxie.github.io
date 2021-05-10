@@ -111,7 +111,7 @@ $(document).ready(function()
 			}
 			else
 			{
-				$(".audio").attr('src', "../audio/wrong.mp3");
+				//$(".audio").attr('src', "../audio/wrong.mp3");
 				$(".badge-warning").show();	
 			}
 		});
