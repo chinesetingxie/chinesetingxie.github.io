@@ -55,3 +55,16 @@ function getGif()
     httpGetAsync(search_url,tenorCallback_search);
     return;
 }
+
+function goBack()
+{
+	var get = window.location.search.substr(1);
+	console.log(get, get.split("K2").length)
+	if (get.split("K2").length == 2)
+	{
+		window.location.replace("../k2.html");
+		
+	}
+	else
+		window.location.replace("../");
+}

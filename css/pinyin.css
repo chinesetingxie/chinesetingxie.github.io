@@ -1,4 +1,4 @@
-.opt-py-sounds {width: 3.5rem; text-align-last:center; }
+.opt-py-sounds {width: 3.5rem; }
 .ipt-py-chars {width: 3.5rem; text-align:center; text-transform:lowercase; }
 .blank { width:3.5rem; border: 1px white; color: white; }
 .blank:disabled { background: white; opacity: 0; }
