@@ -63,7 +63,14 @@ $(document).ready(function()
 	
 	$('.play').click(function() {
 		//$(".audio")[0].play();
-		$(".audio").attr('src', "./" + lesson + "/hanzi/" + words[n] + ".mp3");	
+		try {
+			console.log(words[n])
+			//$(".audio").attr('src', decodeURIComponent('https://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=1000&client=tw-ob&tl=cmn-Hans-CN&q=' + words[n]));	
+		}
+		catch (e) 
+		{
+			$(".audio").attr('src', "./" + lesson + "/hanzi/" + words[n] + ".mp3");	
+		}
 	});	
 });
 
@@ -184,5 +191,9 @@ function nextQuestion()
 	
 	nMistakes = 0;
 	
-	$(".audio").attr('src', "./" + lesson + "/hanzi/" + words[n] + ".mp3");	
+	//$(".audio").attr('src', "./" + lesson + "/hanzi/" + words[n] + ".mp3");	
+	
+	console.log(decodeURI('https://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=1000&client=tw-ob&tl=cmn-Hans-CN&q=' + words[n]));
+	$(".audio").attr('src', decodeURI('https://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=1000&client=tw-ob&tl=cmn-Hans-CN&q=' + words[n]))
+
 }
