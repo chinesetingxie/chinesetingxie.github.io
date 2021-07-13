@@ -1,0 +1,19 @@
+{
+	"audio":
+	[
+		"1.mp3",
+		"2.mp3"
+	],
+	
+	"pyanswer":
+ 	[
+		"mo_tian_lun",
+		"mian_hua_tang"
+	],
+	
+	"pysound":
+	[
+		"#/_##-#_#/#",
+		"##/#_##-_#/##"
+	]
+}

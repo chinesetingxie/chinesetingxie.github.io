@@ -36,7 +36,7 @@ function tenorCallback_search(responsetext)
 {
     var response_objects = JSON.parse(responsetext);
     responseList = response_objects["results"];
-	var rand = Math.floor(Math.random() * 5);
+	var rand = Math.floor(Math.random() * 9);
     document.getElementById("gif").src = responseList[rand]["media"][0]["nanogif"]["url"]; //randomize
     return;
 }
@@ -46,7 +46,7 @@ function getGif()
 {
     var apikey = "7EWLWQNGEFXV";
     var lmt = 5;
-	var wordList = ["excited", "happy", "accomplished", "genius", "cheer"];
+	var wordList = ["excited", "happy", "accomplished", "genius", "cheer", "jump", "celebrate", "joy", "easy"];
 	shuffle(wordList);
     var search_term = wordList[0];
     var search_url = "https://api.tenor.com/v1/search?q=" + search_term + "&key=" +
