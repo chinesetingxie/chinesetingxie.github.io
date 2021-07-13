@@ -36,7 +36,7 @@ function tenorCallback_search(responsetext)
 {
     var response_objects = JSON.parse(responsetext);
     responseList = response_objects["results"];
-	var rand = Math.floor(Math.random() * 9);
+	var rand = Math.floor(Math.random() * 5);
     document.getElementById("gif").src = responseList[rand]["media"][0]["nanogif"]["url"]; //randomize
     return;
 }
