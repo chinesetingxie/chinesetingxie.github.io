@@ -108,6 +108,8 @@ $(document).ready(function()
 				//$(".badge-success").show();	
 				$("#gif").show();
 				$(".audio").attr('src', "../audio/perfect.mp3");
+				startConfetti();
+				setTimeout(function(){ stopConfetti(); }, 1000);
 			}
 			else
 			{

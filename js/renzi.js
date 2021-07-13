@@ -38,6 +38,7 @@ $(document).ready(function()
 	$('.restart').click(function() 
 	{
 		n = 0;
+		$(".play").removeClass('disabled');
 		$("#gif").hide();
 		$(".restart").hide();
 		$('.choice').prop('disabled', false);
@@ -62,10 +63,13 @@ function check(word)
 		$("." + word).attr('disabled', 'true')
 		$("." + word).toggleClass('btn-outline-primary btn-outline-secondary');
 		n++;
+		startConfetti();
+		setTimeout(function(){ stopConfetti(); }, 1000);
 		if (n == words.length)
 		{
 			$("#gif").show();
 			$('.restart').show();
+			$(".play").addClass('disabled');
 		}
 		else
 			nextWord();
