@@ -1,0 +1,19 @@
+{
+	"audio":
+	[
+		"1.mp3",
+		"2.mp3"
+	],
+	
+	"pyanswer":
+ 	[
+		"chong_wu",
+		"wan_shua"
+	],
+	
+	"pysound":
+	[
+		"##v##_#\\",
+		"#/#_###v"
+	]
+}
