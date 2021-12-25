@@ -4,26 +4,20 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function(){
-	$(".next").hide();
 	refresh();
-
-	$(".next").click(function(){
-	  $(".comic").attr("src", "");
-	  $(".next").hide();
-	  refresh();
-	});
 });
 
+setInterval(refresh, 8000);
+
 function refresh()
-{	
+{		
+	$(".comic").attr("src", "");
 	$.get('https://script.google.com/macros/s/AKfycbyulLfJl4SAxUzlzV3zxj4XVjghq6CM9DF_8pA-gXP6hfmF_1_32DNSdPyKy5J0vZeZ/exec', function(data) {
 		$(".comic").attr("src",data);
-		$(".next").show();
 	});
 }
 </script>
 <body>
 <p><img class="comic"></p>
-<p><button class="next">Next</button></p>
 </body>
 </html>
