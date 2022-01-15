@@ -6,8 +6,8 @@
 		"sound-moe_l2_learn_baba.mp3",
 		"女的.mp3",
 		"sound-moe_l2_learn_yifu.mp3",
-		"他的.mp3",
-		"我的雨衣.mp3"		
+		"他的.mp3"
+		
 	],
 	
 	"pyanswer":
@@ -17,8 +17,7 @@
 		"ba_ba",
 		"nü_de",
 		"yi_fu",
-		"ta_de",
-		"wo_de_yu_yi"
+		"ta_de"
 	],
 	
 	"pysound":
@@ -28,7 +27,6 @@
 		"#\\_##",
 		"#v_##",
 		"#-_##",
-		"#-_##",
-		"#v_##_#v_#-"
+		"#-_##"
 	]
 }
