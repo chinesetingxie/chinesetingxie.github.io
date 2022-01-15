@@ -78,7 +78,7 @@ function boldChar()
 		}
 		else
 		{
-			newS += words[i] + " ";
+			newS += words[i] + "<br>";
 		}
 	}
 	return newS;

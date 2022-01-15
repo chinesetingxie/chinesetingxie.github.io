@@ -74,7 +74,7 @@ function boldChar()
 	{
 		if (i == n)
 		{
-			newS += "<strong class='highlight'>" + words[i] + "</strong> ";
+			newS += "<strong class='highlight'>" + words[i] + "</strong><br>";
 		}
 		else
 		{
