@@ -31,36 +31,71 @@
 <div class="container">
 
 	<div class="row"><div class="col"><h4>听写</h4></div></div>
-	
-	
-	
+
 	<h3 class="mt-4">Primary 3</h3>
 	<div class="row mt-4">
-		<div class="col"><h6 class="text-muted">P3 Term 1</h6></div>
+		<div class="col"><h6 class="text-muted">P3 Semester 1</h6></div>
 	</div>
 	
-	<div class="col">
-		<h6 class="mt-2">Han Zi (Learn)</h6>
-		<div class="btn-group btn-group" role="group" >
-			<a href="hanzi.html?P3_T1_L1-learn" class="btn btn-outline-primary">一</a>
-			<a href="hanzi.html?P3_T1_L2-learn" class="btn btn-outline-primary">二</a>
-			<a href="hanzi.html?P3_T1_L3-learn" class="btn btn-outline-primary">三</a>
-			<a href="hanzi.html?P3_T1_L4-learn" class="btn btn-outline-primary">四</a>
-			<a href="hanzi.html?P3_T1_L5-learn" class="btn btn-outline-primary">五</a>
-			
+	<div class="row">
+	
+		<div class="col">
+			<h6 class="mt-2">Han Zi (Learn)</h6>
+			<div class="btn-group btn-group" role="group" >
+				<a href="hanzi.html?P3_T1_L1-learn" class="btn btn-outline-primary">一</a>
+				<a href="hanzi.html?P3_T1_L2-learn" class="btn btn-outline-primary">二</a>
+				<a href="hanzi.html?P3_T1_L3-learn" class="btn btn-outline-primary">三</a>
+				<a href="hanzi.html?P3_T1_L4-learn" class="btn btn-outline-primary">四</a>
+				<a href="hanzi.html?P3_T1_L5-learn" class="btn btn-outline-primary">五</a>
+				<a href="hanzi.html?P3_T1_L6-learn" class="btn btn-outline-primary">六</a>
+				<a href="hanzi.html?P3_T2_L7-learn" class="btn btn-outline-primary">七</a>
+				<a href="hanzi.html?P3_T2_L8-learn" class="btn btn-outline-primary">八</a>
+				<a href="hanzi.html?P3_T2_L9-learn" class="btn btn-outline-primary">九</a>				
+			</div>
 		</div>
+		
+		<div class="col">
+			<h6 class="mt-2">Han Zi (Practice)</h6>
+			<div class="btn-group btn-group" role="group" >
+				<a href="hanzi.html?P3_T1_L1" class="btn btn-outline-primary">一</a>
+				<a href="hanzi.html?P3_T1_L2" class="btn btn-outline-primary">二</a>
+				<a href="hanzi.html?P3_T1_L3" class="btn btn-outline-primary">三</a>
+				<a href="hanzi.html?P3_T1_L4" class="btn btn-outline-primary">四</a>
+				<a href="hanzi.html?P3_T1_L5" class="btn btn-outline-primary">五</a>	
+				<a href="hanzi.html?P3_T1_L6" class="btn btn-outline-primary">六</a>
+				<a href="hanzi.html?P3_T2_L7" class="btn btn-outline-primary">七</a>
+				<a href="hanzi.html?P3_T2_L8" class="btn btn-outline-primary">八</a>
+				<a href="hanzi.html?P3_T2_L9" class="btn btn-outline-primary">九</a>				
+			</div>
+		</div>
+		
 	</div>
 	
-	<div class="col">
-		<h6 class="mt-2">Han Zi (Practice)</h6>
-		<div class="btn-group btn-group" role="group" >
-			<a href="hanzi.html?P3_T1_L1" class="btn btn-outline-primary">一</a>
-			<a href="hanzi.html?P3_T1_L2" class="btn btn-outline-primary">二</a>
-			<a href="hanzi.html?P3_T1_L3" class="btn btn-outline-primary">三</a>
-			<a href="hanzi.html?P3_T1_L4" class="btn btn-outline-primary">四</a>
-			<a href="hanzi.html?P3_T1_L5" class="btn btn-outline-primary">五</a>
-			
+	<div class="row">
+	
+		<div class="col">
+			<h6 class="mt-2">Han Zi (Learn)</h6>
+			<div class="btn-group btn-group" role="group" >
+				<a href="hanzi.html?P3_T1_L6-learn" class="btn btn-outline-primary">六</a>
+				<a href="hanzi.html?P3_T2_L7-learn" class="btn btn-outline-primary">七</a>
+				<a href="hanzi.html?P3_T2_L8-learn" class="btn btn-outline-primary">八</a>
+				<a href="hanzi.html?P3_T2_L9-learn" class="btn btn-outline-primary">九</a>
+				<a href="hanzi.html?P3_T2_L10-learn" class="btn btn-outline-primary">十</a>
+			</div>
 		</div>
+		
+		<div class="col">
+			<h6 class="mt-2">Han Zi (Practice)</h6>
+			<div class="btn-group btn-group" role="group" >
+				<a href="hanzi.html?P2_T1_L6" class="btn btn-outline-primary">六</a>
+				<a href="hanzi.html?P2_T2_L7" class="btn btn-outline-primary">七</a>
+				<a href="hanzi.html?P2_T2_L8" class="btn btn-outline-primary">八</a>
+				<a href="hanzi.html?P2_T2_L9" class="btn btn-outline-primary">九</a>
+				<a href="hanzi.html?P2_T2_L10" class="btn btn-outline-primary">十</a>
+
+			</div>
+		</div>
+		
 	</div>
 	
 	<hr class="liner">
