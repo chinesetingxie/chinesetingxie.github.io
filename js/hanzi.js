@@ -7,10 +7,17 @@ var words = [];
 var wordString = "";
 var totalWords;
 var c;
+var p3 = false;
 
 $(document).ready(function() 
 {		
 	var get = window.location.search.substr(1);
+	
+	if (get.split("P3").length == 2)
+	{
+		p3 = true;
+	}
+	
 	if (get.split("-").length == 2)	
 	{
 		lesson = get.split("-")[0];
@@ -74,11 +81,11 @@ function boldChar()
 	{
 		if (i == n)
 		{
-			newS += "<strong class='highlight'>" + words[i] + "</strong><br>";
+			newS += "<strong class='highlight'>" + words[i] + "</strong>" + (p3 ? "<br>" : " ");
 		}
 		else
 		{
-			newS += words[i] + "<br>";
+			newS += words[i] + (p3 ? "<br>" : " ");
 		}
 	}
 	return newS;
