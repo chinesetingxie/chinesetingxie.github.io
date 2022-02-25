@@ -72,7 +72,7 @@ $(document).ready(function()
 		for (i = 0; i < o.audio.length; i++)
 			questionBank.push({audio: o.audio[i], pyanswer: o.pyanswer[i], pysound: o.pysound[i]});
 
-		shuffle(questionBank);
+		//shuffle(questionBank);
 
 		console.log(questionBank[n]);
 				
