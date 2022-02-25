@@ -81,11 +81,11 @@ function boldChar()
 	{
 		if (i == n)
 		{
-			newS += "<strong class='highlight'>" + words[i] + "</strong> ";
+			newS += "<strong class='highlight'>" + words[i] + "</strong>" + (p3 ? "<br>" : " ");
 		}
 		else
 		{
-			newS += words[i] + " ";
+			newS += words[i] + (p3 ? "<br>" : " ");
 		}
 	}
 	return newS;
